@@ -47,7 +47,7 @@ class DisableORMBundle extends AbstractBundle
 
         $services = $container->services();
 
-        $services->set(CommandSubscriber::class)
+        $services->get(CommandSubscriber::class)
             ->arg('$commands', $config['disable_on_commands']);
     }
 }
