@@ -20,7 +20,7 @@ class DisableORMBundle extends AbstractBundle
         $definition->rootNode() // @phpstan-ignore-line
             ->children()
                 ->arrayNode('disable_on_commands')
-                ->useAttributeAsKey('name')
+                ->prototype('scalar')->end()
                 ->defaultValue([
                     'doctrine:schema:validate',
                     'doctrine:migrations:diff',
