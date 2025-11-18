@@ -30,40 +30,30 @@ class ClassMetadata extends DoctrineClassMetadata
     public function mapField(
         array $mapping
     ): void {
+        if (in_array($mapping['fieldName'], $this->disabledFields)) {
+            return;
+        }
+
         parent::mapField($mapping);
-        $this->removeField($mapping['fieldName']);
     }
 
     public function addInheritedFieldMapping(
         FieldMapping $fieldMapping
     ): void {
+        if (in_array($fieldMapping['fieldName'], $this->disabledFields)) {
+            return;
+        }
+
         parent::addInheritedFieldMapping($fieldMapping);
-        $this->removeField($fieldMapping['fieldName']);
     }
 
     protected function _storeAssociationMapping(
         AssociationMapping $assocMapping
     ): void {
-        $sourceFieldName = $assocMapping['fieldName'];
-
-        if (in_array($sourceFieldName, $this->disabledFields)) {
+        if (in_array($assocMapping['fieldName'], $this->disabledFields)) {
             return;
         }
 
         parent::_storeAssociationMapping($assocMapping);
-    }
-
-    private function removeField(
-        string $field
-    ): void {
-        if (empty($this->disabledFields) || !in_array($field, $this->disabledFields)) {
-            return;
-        }
-
-        // we want to remove this field from entity
-        $mapping = $this->fieldMappings[$field];
-
-        unset($this->fieldMappings[$mapping['fieldName']]);
-        unset($this->fieldNames[$mapping['columnName']]);
     }
 }
