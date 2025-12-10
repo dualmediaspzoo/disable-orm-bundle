@@ -40,7 +40,7 @@ class ClassMetadata extends DoctrineClassMetadata
     public function addInheritedFieldMapping(
         FieldMapping $fieldMapping
     ): void {
-        if (in_array($fieldMapping['fieldName'], $this->disabledFields)) {
+        if (in_array($fieldMapping->fieldName, $this->disabledFields)) {
             return;
         }
 
@@ -50,7 +50,7 @@ class ClassMetadata extends DoctrineClassMetadata
     protected function _storeAssociationMapping(
         AssociationMapping $assocMapping
     ): void {
-        if (in_array($assocMapping['fieldName'], $this->disabledFields)) {
+        if (in_array($assocMapping->fieldName, $this->disabledFields)) {
             return;
         }
 
