@@ -78,3 +78,11 @@ class FooEntity {
 }
 ```
 
+## PHPStan Rule
+
+Simply add the following to your PHPStan config to enable a simple check for your entities (only applies if you're using PHP8 Attributes)
+
+```neon
+includes:
+  - vendor/dualmedia/disable-orm-bundle/extension.neon
+```
