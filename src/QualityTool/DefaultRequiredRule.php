@@ -160,7 +160,7 @@ class DefaultRequiredRule implements Rule
             }
 
             foreach ($arg->value->items as $item) {
-                if (null === $item) {
+                if (null === $item) { // @phpstan-ignore-line
                     continue;
                 }
 
