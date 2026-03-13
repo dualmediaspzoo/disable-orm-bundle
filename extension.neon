@@ -1,0 +1,5 @@
+services:
+	-
+		class: DualMedia\DisableORMBundle\QualityTool\DefaultRequiredRule
+		tags:
+			- phpstan.rules.rule

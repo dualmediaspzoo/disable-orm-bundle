@@ -7,9 +7,11 @@ jobs:
       matrix:
         include:
           - symfony-version: 6.4
-            php-version: 8.3
-          - symfony-version: 7.2
             php-version: 8.4
+          - symfony-version: 7.4
+            php-version: 8.4
+          - symfony-version: 7.4
+            php-version: 8.5
 
     runs-on: ubuntu-latest
     steps:
@@ -45,8 +47,8 @@ jobs:
     strategy:
       matrix:
         include:
-          - symfony-version: 6.4
-            php-version: 8.3
+          - symfony-version: 7.4
+            php-version: 8.5
 
     runs-on: ubuntu-latest
     needs: install
@@ -78,8 +80,8 @@ jobs:
     strategy:
       matrix:
         include:
-          - symfony-version: 6.4
-            php-version: 8.3
+          - symfony-version: 7.4
+            php-version: 8.5
 
     runs-on: ubuntu-latest
     needs: install
@@ -112,9 +114,11 @@ jobs:
       matrix:
         include:
           - symfony-version: 6.4
-            php-version: 8.3
-          - symfony-version: 7.2
             php-version: 8.4
+          - symfony-version: 7.4
+            php-version: 8.4
+          - symfony-version: 7.4
+            php-version: 8.5
 
     runs-on: ubuntu-latest
     needs:
