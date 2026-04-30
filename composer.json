@@ -21,9 +21,9 @@
     "minimum-stability": "stable",
     "require": {
         "php": "^8.3",
-        "doctrine/doctrine-bundle": "^2",
+        "doctrine/doctrine-bundle": "^3",
         "doctrine/orm": "^3",
-        "symfony/framework-bundle": "^6.4 || ^7.3"
+        "symfony/framework-bundle": "^6.4 || ^7.4 || ^8.0"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3",
