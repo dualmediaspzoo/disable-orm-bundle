@@ -1,0 +1,8 @@
+.entity_property_removal_check:
+  interruptible: true
+  variables:
+    GIT_DEPTH: 0
+  before_script:
+    - git fetch origin $CI_MERGE_REQUEST_TARGET_BRANCH_NAME
+  script:
+    - php vendor/bin/disable-orm-check-entity-property-removal.php origin/$CI_MERGE_REQUEST_TARGET_BRANCH_NAME
