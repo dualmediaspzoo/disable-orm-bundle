@@ -32,6 +32,11 @@
         "phpstan/phpstan-phpunit": "^2",
         "spaze/phpstan-disallowed-calls": "^4",
         "phpunit/phpunit": "^12",
-        "pkly/phpunit-service-create-trait": "^1.0"
-    }
+        "pkly/phpunit-service-create-trait": "^1.0",
+        "nikic/php-parser": "^5"
+    },
+    "suggest": {
+        "nikic/php-parser": "Required, if you wish to use the entity property detection script"
+    },
+    "bin": ["scripts/disable-orm-check-entity-property-removal.php"]
 }

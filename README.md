@@ -86,3 +86,13 @@ Simply add the following to your PHPStan config to enable a simple check for you
 includes:
   - vendor/dualmedia/disable-orm-bundle/extension.neon
 ```
+
+## Git change detection
+
+To prevent breaking your application on accident you may add the script in /scripts to your CI to automatically
+detect possibly incorrect removals of fields.
+
+As when using this bundle it is expected, that a removed field WILL contain the DisableORM attribute, before being deleted,
+because of that, we can catch invalid field removals in the CI steps.
+
+A Gitlab CI declaration is provided in the .gitlab-ci.job.yml file, simply include it and then extend it as required.
