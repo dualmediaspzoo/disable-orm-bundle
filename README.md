@@ -94,5 +94,6 @@ detect possibly incorrect removals of fields.
 
 As when using this bundle it is expected, that a removed field WILL contain the DisableORM attribute, before being deleted,
 because of that, we can catch invalid field removals in the CI steps.
+Deleting a whole entity file is allowed, as long as every relation pointing to it from other entities was disabled first.
 
 A Gitlab CI declaration is provided in the .gitlab-ci.job.yml file, simply include it and then extend it as required.

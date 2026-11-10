@@ -29,7 +29,7 @@ if ('' === $mergeBase) {
     exit(2);
 }
 
-$diffOutput = (string)shell_exec("git diff {$mergeBase} HEAD --name-only --diff-filter=MD 2>/dev/null");
+$diffOutput = (string)shell_exec("git diff {$mergeBase} HEAD --name-only --diff-filter=M 2>/dev/null");
 $changedFiles = array_filter(
     array_map('trim', explode("\n", $diffOutput)),
     static fn (string $f) => (bool)preg_match('#src/[^/]+/Entity/.+\.php$#', $f)
